@@ -1,14 +1,18 @@
-
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import User from "./routes/User"
 
 
 function App() {
-  
+
 
   return (
-  
-     <div className=' w-16 h-16 bg-amber-200'></div>
-    
+    <BrowserRouter>
+      <Routes>
+        <Route path="/*"  element={<User/>}  />
+      </Routes>
+    </BrowserRouter>
   )
+
 }
 
 export default App
