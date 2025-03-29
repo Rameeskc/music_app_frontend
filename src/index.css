@@ -1,2 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Tint&family=Dancing+Script:wght@400..700&display=swap');
 @import "tailwindcss";
+
+
+@theme {
+    --font-Roboto:'Dancing Script', 'cursive'
+  }
 
