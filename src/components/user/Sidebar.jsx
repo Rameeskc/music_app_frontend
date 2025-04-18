@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { FaHeadphones } from "react-icons/fa";
 import { GiMicrophone } from "react-icons/gi";
 import { IoAlbumsSharp } from "react-icons/io5";
+import { PiClockCountdownFill } from "react-icons/pi";
 import { MdLibraryMusic } from "react-icons/md";
 import { FaHeart } from "react-icons/fa";
 import { MdHome } from "react-icons/md";
@@ -25,47 +26,33 @@ const Sidebar = () => {
     }, 
     {
       id: 3,
-      name: "Albums",
+      name: "Latest",
       link: "/",
-      icon: IoAlbumsSharp
+      icon: PiClockCountdownFill
     }, 
-    {
-      id: 4,
-      name: "Likes",
-      link: "/",
-      icon: FaHeart
-    }, 
-    {
-      id: 5,
-      name: "Playlist",
-      link: "/",
-      icon: MdLibraryMusic
-    },
+    
 
   ]
 
   return (
-    <div className=' h-screen w-1/5 bg-[rgb(24,27,34)]'>
-      <div className=' w-full h-12 flex justify-center items-center mt-4'>
+    <div className='hidden lg:block h-screen w-1/5 bg-[rgb(24,27,34)]'>
+      <div className=' w-full h-12 flex justify-center items-center mt-4 p-2'>
         <FaHeadphones className='text-orange-500 text-2xl' />
-        <p className=' font-Pacifico ml-2 text-xl text-orange-500'>MoonBeats</p>
+        <p className=' font-Pacifico ml-2 text-xl text-slate-200'>MoonBeats</p>
       </div>
-      <div className='mt-12 '>
-        <ul className="space-y-4 p-4 ml-4">
+      <div className='mt-12  '>
+        <ul className=" p-2 lg:p-4 ">
           {menu.map((item) => (
             <li key={item.id}>
-              <Link to={item.link} className="flex items-center gap-2 text-white hover:text-orange-500">
-                <item.icon className="text-xl" />
+              <Link to={item.link} className="flex h-12 w-full items-center pl-6 rounded-2xl gap-6 text-white hover:text-slate-700 hover:bg-slate-200 transition ease-out duration-300 hover:scale-110 ">
+                <item.icon className="text-lg" />
                 <span>{item.name}</span>
               </Link>
             </li>
           ))}
         </ul>
       </div>
-      <div className="flex items-center gap-2 ml-4 text-white hover:text-orange-500 p-4">
-        <IoLogOut />
-        <p>LogOut</p>
-      </div>
+      
     </div>
   )
 }
