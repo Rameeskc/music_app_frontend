@@ -35,7 +35,7 @@ const Sidebar = () => {
   ]
 
   return (
-    <div className='hidden lg:block h-screen w-[300px] bg-[rgb(24,27,34)]'>
+    <div className='hidden lg:block h-screen w-[280px] bg-[rgb(24,27,34)]'>
       <div className=' w-full h-12 flex justify-center items-center mt-4 p-2'>
         <FaHeadphones className='text-orange-500 text-2xl' />
         <p className=' font-Pacifico ml-2 text-xl text-slate-200'>MoonBeats</p>
