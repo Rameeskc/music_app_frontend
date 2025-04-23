@@ -38,18 +38,15 @@ const BottomBar = () => {
 
   return (
     <div className=' lg:hidden h-20 bg-[rgb(24,27,34)]'>
-      <ul className=' flex h-20 text-[rgb(176,176,176)] font-light items-center justify-evenly'>
+      <ul className=' flex h-18 text-[rgb(176,176,176)] font-light items-center justify-evenly'>
         {Bottom.map((item) => (
           <li key={item.id}>
             <Link to={item.link}>
-             <div className=' flex flex-col items-center justify-center'>
-            <item.icon className='text-3xl '/>
-            <p className=' text-[12px]'>{item.name}</p>
-              
-            </div> 
+              <div className=' flex flex-col items-center justify-center'>
+                <item.icon className='text-2xl ' />
+                <p className=' text-[12px]'>{item.name}</p>
+              </div>
             </Link>
-
-
           </li>
         ))}
       </ul>

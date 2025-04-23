@@ -17,20 +17,20 @@ const Sidebar = () => {
       name: "Home",
       link: "/",
       icon: MdHome
-    }, 
+    },
     {
       id: 2,
       name: "Artist",
       link: "/",
       icon: GiMicrophone
-    }, 
+    },
     {
       id: 3,
       name: "Latest",
       link: "/",
       icon: PiClockCountdownFill
-    }, 
-    
+    },
+
 
   ]
 
@@ -44,7 +44,7 @@ const Sidebar = () => {
         <ul className=" p-2 lg:p-4 ">
           {menu.map((item) => (
             <li key={item.id}>
-              <Link to={item.link} className="flex h-12 w-full items-center pl-6 rounded-2xl gap-6 text-white hover:text-slate-700 hover:bg-slate-200 transition ease-out duration-300 hover:scale-110 ">
+              <Link to={item.link} className="flex h-12 w-full items-center pl-6 rounded-2xl gap-6 text-slate-200 hover:text-slate-700 hover:bg-slate-200 transition ease-out duration-300 hover:scale-110 ">
                 <item.icon className="text-lg" />
                 <span>{item.name}</span>
               </Link>
@@ -52,7 +52,7 @@ const Sidebar = () => {
           ))}
         </ul>
       </div>
-      
+
     </div>
   )
 }
