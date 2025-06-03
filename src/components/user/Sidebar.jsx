@@ -1,60 +1,41 @@
-import React from 'react'
-import { Link } from "react-router-dom";
-import { FaHeadphones } from "react-icons/fa";
-import { GiMicrophone } from "react-icons/gi";
-import { IoAlbumsSharp } from "react-icons/io5";
-import { PiClockCountdownFill } from "react-icons/pi";
-import { MdLibraryMusic } from "react-icons/md";
-import { FaHeart } from "react-icons/fa";
-import { MdHome } from "react-icons/md";
-import { IoLogOut } from "react-icons/io5";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { FaHeadphones } from 'react-icons/fa';
+import { GiMicrophone } from 'react-icons/gi';
+import { PiClockCountdownFill } from 'react-icons/pi';
+import { MdHome } from 'react-icons/md';
 
 const Sidebar = () => {
-
-  const menu = [
-    {
-      id: 1,
-      name: "Home",
-      link: "/",
-      icon: MdHome
-    },
-    {
-      id: 2,
-      name: "Artist",
-      link: "/",
-      icon: GiMicrophone
-    },
-    {
-      id: 3,
-      name: "Latest",
-      link: "/",
-      icon: PiClockCountdownFill
-    },
-
-
-  ]
+  const menuItems = [
+    { id: 1, name: 'Home', link: '/', icon: MdHome },
+    { id: 2, name: 'Artist', link: '/', icon: GiMicrophone },
+    { id: 3, name: 'Latest', link: '/', icon: PiClockCountdownFill },
+  ];
 
   return (
-    <div className='hidden lg:block h-screen w-[280px] bg-[rgb(24,27,34)]'>
-      <div className=' w-full h-12 flex justify-center items-center mt-4 p-2'>
-        <FaHeadphones className='text-orange-500 text-2xl' />
-        <p className=' font-Pacifico ml-2 text-xl text-slate-200'>MoonBeats</p>
+    <div className="hidden lg:flex flex-col h-screen w-72 bg-transparent backdrop-blur-md border-r border-slate-700 shadow-lg">
+      <div className="flex items-center justify-center h-16 mt-4 p-4">
+        <FaHeadphones className="text-orange-500 text-3xl" />
+        <p className="font-Pacifico ml-3 text-2xl text-slate-200 select-none">MoonBeats</p>
       </div>
-      <div className='mt-12  '>
-        <ul className=" p-2 lg:p-4 ">
-          {menu.map((item) => (
-            <li key={item.id}>
-              <Link to={item.link} className="flex h-12 w-full items-center pl-6 rounded-2xl gap-6 text-slate-200 hover:text-slate-700 hover:bg-slate-200 transition ease-out duration-300 hover:scale-110 ">
-                <item.icon className="text-lg" />
-                <span>{item.name}</span>
+
+      <nav className="mt-12 flex-grow">
+        <ul className="flex flex-col gap-4 p-4">
+          {menuItems.map(({ id, name, link, icon: Icon }) => (
+            <li key={id}>
+              <Link
+                to={link}
+                className="flex items-center gap-5 text-slate-200 hover:text-orange-500 hover:bg-slate-800/50 rounded-2xl px-6 py-3 transition transform hover:scale-105"
+              >
+                <Icon className="text-2xl" />
+                <span className="font-semibold text-lg select-none">{name}</span>
               </Link>
             </li>
           ))}
         </ul>
-      </div>
-
+      </nav>
     </div>
-  )
-}
+  );
+};
 
-export default Sidebar
+export default Sidebar;

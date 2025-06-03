@@ -1,22 +1,12 @@
-import React from 'react'
-import NavBar from '../../components/user/NavBar';
-import Sidebar from '../../components/user/Sidebar'
-import BottomBar from'../../components/user/BottomBar'
+import React from 'react';
 
 const Home = () => {
   return (
-    <div className='flex h-screen w-screen'>
-      
-        <Sidebar />
-      
-      <div className='flex flex-col grow'>
-        <NavBar />
-        <div className='grow'></div>
-        <BottomBar/>
-      </div>
-      </div>
+    <div className="text-white p-6">
+      <h1 className="text-3xl font-bold">Welcome to MoonBeats 🎧</h1>
+      <p className="mt-2 text-slate-300">Your music world begins here.</p>
+    </div>
+  );
+};
 
-  )
-}
-
-export default Home
+export default Home;

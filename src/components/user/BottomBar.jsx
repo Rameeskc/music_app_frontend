@@ -1,57 +1,35 @@
-import React from 'react'
-import { Link } from "react-router-dom";
-import { LiaHomeSolid } from "react-icons/lia";
-import { LiaMicrophoneAltSolid } from "react-icons/lia";
-import { BiLibrary } from "react-icons/bi";
-import { IoHeartOutline } from "react-icons/io5";
-import { IoSearchOutline } from "react-icons/io5";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { LiaHomeSolid } from 'react-icons/lia';
+import { IoSearchOutline, IoHeartOutline } from 'react-icons/io5';
+import { BiLibrary } from 'react-icons/bi';
 
 const BottomBar = () => {
-
-  const Bottom = [
-    {
-      id: 1,
-      name: "Home",
-      link: "/",
-      icon: LiaHomeSolid
-    },
-    {
-      id: 2,
-      name: "Search",
-      link: "/",
-      icon: IoSearchOutline
-    },
-    {
-      id: 3,
-      name: "Favourite",
-      link: "/",
-      icon: IoHeartOutline
-    },
-    {
-      id: 4,
-      name: "Artist",
-      link: "/",
-      icon: BiLibrary
-
-    }
-  ]
+  const bottomItems = [
+    { id: 1, name: 'Home', link: '/', icon: LiaHomeSolid },
+    { id: 2, name: 'Search', link: '/', icon: IoSearchOutline },
+    { id: 3, name: 'Favourite', link: '/', icon: IoHeartOutline },
+    { id: 4, name: 'Artist', link: '/', icon: BiLibrary },
+  ];
 
   return (
-    <div className=' lg:hidden h-20 bg-[rgb(24,27,34)]'>
-      <ul className=' flex h-18 text-[rgb(176,176,176)] font-light items-center justify-evenly'>
-        {Bottom.map((item) => (
-          <li key={item.id}>
-            <Link to={item.link}>
-              <div className=' flex flex-col items-center justify-center'>
-                <item.icon className='text-2xl ' />
-                <p className=' text-[12px]'>{item.name}</p>
-              </div>
+    <div className="lg:hidden fixed bottom-0 left-0 right-0 h-20 bg-transparent shadow-inner border-t border-slate-700 backdrop-blur-md">
+      <ul className="flex h-full text-[rgb(176,176,176)] font-light items-center justify-evenly">
+        {bottomItems.map(({ id, name, link, icon: Icon }) => (
+          <li key={id}>
+            <Link
+              to={link}
+              className="flex flex-col items-center justify-center gap-1 hover:text-orange-500 transition"
+              aria-label={name}
+            >
+              <Icon className="text-2xl" />
+              <p className="text-xs select-none">{name}</p>
             </Link>
           </li>
         ))}
       </ul>
     </div>
-  )
-}
+  );
+};
 
-export default BottomBar
+export default BottomBar;
