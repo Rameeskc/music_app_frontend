@@ -6,9 +6,11 @@ import Sidebar from '../Sidebar';
 
 const UserLayout = () => {
   return (
-    <div className="flex h-screen w-screen">
-      <Sidebar />
-      <div className="flex flex-col grow">
+    <div className="flex h-screen w-screen overflow-hidden">
+      <div className="hidden lg:flex flex-col h-full w-72 shrink-0">
+        <Sidebar />
+      </div>
+      <div className="flex flex-col grow overflow-hidden">
         <NavBar />
         <div className="grow overflow-auto">
           <Outlet />
