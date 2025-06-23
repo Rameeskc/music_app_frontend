@@ -9,41 +9,31 @@ import 'swiper/css/pagination';
 
 const Banner = () => {
   return (
-    <div className="h-96 w-full bg-black">
+    <div className="w-full bg-black flex items-center justify-center px-5 z-10 relative">
       <Swiper
+        className="w-full max-w-6xl"
         effect="coverflow"
         grabCursor={true}
         centeredSlides={true}
-        slidesPerView={window.innerWidth < 768 ? 1 : 'auto'} // responsive
+        slidesPerView={'auto'}
+        loop={true}
         coverflowEffect={{
-          rotate: 50,
-          stretch: 0,
+          rotate: 20,
+          stretch: 11,
           depth: 100,
           modifier: 1,
-          slideShadows: true,
+          scale: 1,
+          slideShadows: false,
         }}
-        autoplay={{ delay: 2500, disableOnInteraction: false }}
+        autoplay={{ delay: 1500, disableOnInteraction: false }}
         pagination={{ clickable: true }}
-        modules={[EffectCoverflow, Pagination, Autoplay]}
-        className="w-full max-w-4xl mx-auto"
+        modules={[EffectCoverflow, Autoplay, Pagination]}
       >
-        <SwiperSlide>
-          <BannerCard/>
-        </SwiperSlide>
-        {/* <SwiperSlide>
-          <img
-            src="/images/slide2.jpg"
-            className="rounded-xl object-cover w-96 h-64"
-            alt="Slide 2"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="/images/slide3.jpg"
-            className="rounded-xl object-cover w-96 h-64"
-            alt="Slide 3"
-          />
-        </SwiperSlide> */}
+        {Array.from({ length: 8 }).map((_, i) => (
+          <SwiperSlide key={i} className="!w-64">
+            <BannerCard />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   );

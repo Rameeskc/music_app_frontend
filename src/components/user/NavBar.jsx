@@ -7,7 +7,7 @@ import { IoSettingsOutline } from 'react-icons/io5';
 const NavBar = () => {
   const [open, setOpen] = useState(false);
   const dropdownRef = useRef(null);
-  const navbarRef = useRef(null); // 👈 Create a ref for the NavBar
+  const navbarRef = useRef(null);
 
   const profile = [
     { id: 1, name: "Profile", link: "/", icon: FaRegUser },
@@ -27,17 +27,10 @@ const NavBar = () => {
     return () => document.removeEventListener('mouseup', handleClickOutside);
   }, []);
 
-  // 👇 Log the navbar width
-  useEffect(() => {
-    if (navbarRef.current) {
-      console.log("NavBar Width:", navbarRef.current.offsetWidth + 'px');
-    }
-  }, []);
-
   return (
     <div
-      ref={navbarRef} // 👈 Attach ref here
-      className="relative h-16 flex items-center justify-between lg:justify-end bg-transparent px-6 shadow-lg backdrop-blur-md border-b border-slate-700"
+      ref={navbarRef}
+      className="relative z-50 h-16 flex items-center justify-between lg:justify-end bg-transparent px-6 shadow-lg backdrop-blur-md border-b border-slate-700"
     >
       <div className="flex items-center">
         <FaHeadphones className="text-orange-500 text-2xl lg:hidden" />
@@ -50,23 +43,22 @@ const NavBar = () => {
         className="hidden lg:block border border-slate-600 bg-[rgba(255,255,255,0.05)] h-10 w-80 placeholder:text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm text-slate-300 px-5 mr-6 transition"
       />
 
-      <div className="relative" ref={dropdownRef}>
+      <div className="relative z-50" ref={dropdownRef}>
         <button
           onClick={toggleDropdown}
           className="cursor-pointer focus:outline-none focus:ring-2 focus:ring-orange-400 rounded-full p-1"
           aria-haspopup="true"
           aria-expanded={open}
-          aria-label="User menu"
         >
           <FaUserCircle className="text-3xl text-slate-200 hover:text-orange-500 transition" />
         </button>
 
         <div
-          className={`absolute right-0 top-14 w-72 bg-black/30 backdrop-blur-md border border-orange-600 rounded-2xl shadow-2xl p-5
-            transition-all duration-300 origin-top-right transform
-            ${open ? 'opacity-100 scale-100 pointer-events-auto' : 'opacity-0 scale-95 pointer-events-none'}
-          `}
-        >
+  className={`absolute right-0 top-14 w-72 bg-black border border-orange-600 rounded-2xl shadow-2xl p-5
+    transition-all duration-300 origin-top-right transform
+    ${open ? 'opacity-100 scale-100 pointer-events-auto' : 'opacity-0 scale-95 pointer-events-none'}
+  `}
+>
           <ul className="space-y-4 leading-relaxed">
             {profile.map(({ id, name, link, icon: Icon }) => (
               <li key={id}>
