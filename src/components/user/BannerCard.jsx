@@ -4,12 +4,9 @@ import { IoPlayCircle } from "react-icons/io5";
 
 const BannerCard = () => {
   return (
-    <div className="relative h-80 w-60 rounded-xl shadow-lg overflow-hidden">
+    <div className="relative h-80 rounded-xl shadow-lg overflow-hidden bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${image})` }}>
       {/* Background Image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${image})` }}
-      />
+
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/40" />
       {/* Content */}
@@ -20,7 +17,7 @@ const BannerCard = () => {
             <p className="w-full pt-1 text-sm">artist</p>
           </div>
           <div className="w-2/6 h-full flex items-center justify-center">
-            <IoPlayCircle className="text-6xl" />
+            <IoPlayCircle className="text-6xl text-[rgb(1,238,254)]" />
           </div>
         </div>
       </div>

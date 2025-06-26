@@ -6,7 +6,8 @@
   }
 
   body, #root {
-    @apply bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 min-h-screen;
+    @apply bg-black min-h-screen;
     margin: 0;
   }
+ 
 

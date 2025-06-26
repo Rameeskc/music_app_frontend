@@ -30,56 +30,59 @@ const NavBar = () => {
   return (
     <div
       ref={navbarRef}
-      className="relative z-50 h-16 flex items-center justify-between lg:justify-end bg-transparent px-6 shadow-lg backdrop-blur-md border-b border-slate-700"
+      className="relative z-50 h-16 flex items-center justify-between lg:justify-end bg-transparent px-6 shadow-lg backdrop-blur-md"
     >
       <div className="flex items-center">
-        <FaHeadphones className="text-orange-500 text-2xl lg:hidden" />
+        <FaHeadphones className="text-[rgb(1,238,254)] text-2xl lg:hidden" />
         <p className="lg:hidden font-Pacifico ml-2 text-xl text-slate-200 select-none">MoonBeats</p>
       </div>
 
       <input
         type="text"
         placeholder="Search your song..."
-        className="hidden lg:block border border-slate-600 bg-[rgba(255,255,255,0.05)] h-10 w-80 placeholder:text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm text-slate-300 px-5 mr-6 transition"
+        className="hidden lg:block border border-slate-600 bg-[rgba(255,255,255,0.05)] h-10 w-80 placeholder:text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-[rgb(1,238,254)] text-sm text-slate-300 px-5 mr-6 transition"
       />
 
       <div className="relative z-50" ref={dropdownRef}>
         <button
           onClick={toggleDropdown}
-          className="cursor-pointer focus:outline-none focus:ring-2 focus:ring-orange-400 rounded-full p-1"
+          className="cursor-pointer focus:outline-none focus:ring-2 focus:ring-[rgb(1,238,254)] rounded-full p-1"
           aria-haspopup="true"
           aria-expanded={open}
         >
-          <FaUserCircle className="text-3xl text-slate-200 hover:text-orange-500 transition" />
+          <FaUserCircle className="text-3xl text-slate-200 hover:text-[rgb(1,238,254)] transition" />
         </button>
 
         <div
-  className={`absolute right-0 top-14 w-72 bg-black border border-orange-600 rounded-2xl shadow-2xl p-5
-    transition-all duration-300 origin-top-right transform
+          className={`absolute right-[-20px] top-14 w-72 h-96 bg-black border border-[rgb(1,238,254)] rounded-2xl shadow-2xl p-5
+                      transition-all duration-300 origin-top-right transform flex flex-col justify-between
     ${open ? 'opacity-100 scale-100 pointer-events-auto' : 'opacity-0 scale-95 pointer-events-none'}
   `}
->
+        >
+          {/* Profile List */}
           <ul className="space-y-4 leading-relaxed">
             {profile.map(({ id, name, link, icon: Icon }) => (
               <li key={id}>
                 <Link
                   to={link}
-                  className="flex items-center gap-3 text-orange-300 hover:text-white transition font-semibold text-lg"
+                  className="flex items-center gap-3 text-white hover:text-[rgb(1,238,254)] transition font-semibold text-lg"
                 >
-                  <Icon className="text-2xl" />
+                  <Icon className="text-xl" />
                   <span>{name}</span>
                 </Link>
               </li>
             ))}
           </ul>
 
+          {/* Login Button pushed to bottom */}
           <button
-            className="mt-8 w-full bg-orange-500 hover:bg-orange-600 active:bg-orange-700 transition text-white py-3 rounded-full font-semibold shadow-lg shadow-orange-600/50"
+            className="w-full bg-[rgb(1,238,254)] hover:bg-[rgb(1,238,254)] active:bg-[rgb(1,238,254)] transition text-white py-3 rounded-full font-semibold shadow-lg"
             onClick={() => alert('Login clicked!')}
           >
             Login
           </button>
         </div>
+
       </div>
     </div>
   );

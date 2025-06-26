@@ -13,9 +13,9 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className="hidden lg:flex flex-col h-screen w-72 bg-transparent backdrop-blur-md border-r border-slate-700 shadow-lg">
+    <div className="hidden lg:flex flex-col h-screen w-64 bg-[rgb(40,40,40)] backdrop-blur-md shadow-lg m-4 rounded-2xl">
       <div className="flex items-center justify-center h-16 mt-4 p-4">
-        <FaHeadphones className="text-orange-500 text-3xl" />
+        <FaHeadphones className="text-[rgb(1,238,254)] text-3xl" />
         <p className="font-Pacifico ml-3 text-2xl text-slate-200 select-none">MoonBeats</p>
       </div>
 
@@ -25,7 +25,7 @@ const Sidebar = () => {
             <li key={id}>
               <Link
                 to={link}
-                className="flex items-center gap-5 text-slate-200 hover:text-orange-500 hover:bg-slate-800/50 rounded-2xl px-6 py-3 transition transform hover:scale-105"
+                className="flex items-center gap-5 text-slate-200 hover:text-[rgb(1,238,254)] hover:bg-slate-800/50 rounded-2xl px-6 py-3 transition transform hover:scale-105"
               >
                 <Icon className="text-2xl" />
                 <span className="font-semibold text-lg select-none">{name}</span>
