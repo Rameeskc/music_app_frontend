@@ -6,8 +6,32 @@
   }
 
   body, #root {
-    @apply bg-black min-h-screen;
+    @apply bg-[rgb(18,18,18)] min-h-screen;
     margin: 0;
   }
- 
-
+  @keyframes scrollText {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .marquee-hover {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+  }
+  
+  .marquee-hover span {
+    display: inline-block;
+    transform: translateX(0%);
+    transition: transform 0.3s ease;
+    will-change: transform;
+  }
+  
+  .marquee-hover:hover span {
+    animation: scrollText 6s linear infinite;
+  }
+  

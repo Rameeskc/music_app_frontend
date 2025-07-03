@@ -30,7 +30,7 @@ const NavBar = () => {
   return (
     <div
       ref={navbarRef}
-      className="relative z-50 h-16 flex items-center justify-between lg:justify-end bg-transparent px-6 shadow-lg backdrop-blur-md"
+      className="relative my-3 z-50 h-16 flex items-center justify-between lg:justify-end bg-transparent px-6 shadow-lg backdrop-blur-md"
     >
       <div className="flex items-center">
         <FaHeadphones className="text-[rgb(1,238,254)] text-2xl lg:hidden" />
@@ -40,7 +40,7 @@ const NavBar = () => {
       <input
         type="text"
         placeholder="Search your song..."
-        className="hidden lg:block border border-slate-600 bg-[rgba(255,255,255,0.05)] h-10 w-80 placeholder:text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-[rgb(1,238,254)] text-sm text-slate-300 px-5 mr-6 transition"
+        className="hidden lg:block border bg-[rgb(40,40,40)] border-slate-600 h-10 w-80 placeholder:text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-[rgb(1,238,254)] text-sm text-slate-300 px-5 mr-6 transition"
       />
 
       <div className="relative z-50" ref={dropdownRef}>

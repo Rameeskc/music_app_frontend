@@ -4,7 +4,7 @@ import { IoPlayCircle } from "react-icons/io5";
 
 const BannerCard = () => {
   return (
-    <div className="relative h-80 rounded-xl shadow-lg overflow-hidden bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${image})` }}>
+    <div className="relative h-80 w- rounded-xl shadow-lg overflow-hidden bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${image})` }}>
       {/* Background Image */}
 
       {/* Dark overlay */}
