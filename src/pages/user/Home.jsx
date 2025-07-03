@@ -8,8 +8,12 @@ const Home = () => {
   return (
     <>
       <Chips/>
-      {/* <Banner/>chro */}
-      <TextArea/>
+      {/* <Banner/> */}
+      <TextArea title="Latest songs"/>
+      <SongList/>
+      <TextArea title="Top Trending"/>
+      <SongList/>
+      <TextArea title="Recommended For You"/>
       <SongList/>
     <div className="text-white p-6">
       <h1 className="text-3xl font-bold">Welcome to MoonBeats 🎧</h1>

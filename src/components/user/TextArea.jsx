@@ -1,8 +1,11 @@
 import React from 'react'
 
-const TextArea = () => {
+const TextArea = ({title}) => {
   return (
-    <div className='text-white px-6 pt-4 text-xl font-semibold '>Select Categories</div>
+    <div className=' flex justify-between text-white pl-6 pr-10 pt-4 text-xl font-semibold '>
+    <p>{title}</p>
+    <button className=' text-sm text-[rgb(136,136,136)] hover:underline'>Show all</button>
+    </div>
   )
 }
 

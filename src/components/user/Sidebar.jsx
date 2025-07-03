@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { FaHeadphones } from 'react-icons/fa';
 import { GiMicrophone } from 'react-icons/gi';
 import { PiClockCountdownFill } from 'react-icons/pi';
+import { BiLibrary } from 'react-icons/bi';
+import { IoSettingsOutline } from 'react-icons/io5';
 import { MdHome } from 'react-icons/md';
 
 const Sidebar = () => {
@@ -10,6 +12,8 @@ const Sidebar = () => {
     { id: 1, name: 'Home', link: '/', icon: MdHome },
     { id: 2, name: 'Artist', link: '/', icon: GiMicrophone },
     { id: 3, name: 'Latest', link: '/', icon: PiClockCountdownFill },
+    { id: 4, name: 'Playlist', link: "/", icon: BiLibrary },
+    // { id: 5, name: "Settings", link: "/", icon: IoSettingsOutline },
   ];
 
   return (
@@ -20,7 +24,7 @@ const Sidebar = () => {
       </div>
 
       <nav className="mt-12 flex-grow">
-        <ul className="flex flex-col gap-4 p-4">
+        <ul className="flex flex-col p-4">
           {menuItems.map(({ id, name, link, icon: Icon }) => (
             <li key={id}>
               <Link

@@ -1,8 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { FaHeadphones, FaUserCircle, FaRegUser } from 'react-icons/fa';
-import { BiLibrary } from 'react-icons/bi';
-import { IoSettingsOutline } from 'react-icons/io5';
 
 const NavBar = () => {
   const [open, setOpen] = useState(false);
@@ -11,8 +9,6 @@ const NavBar = () => {
 
   const profile = [
     { id: 1, name: "Profile", link: "/", icon: FaRegUser },
-    { id: 2, name: "Playlist", link: "/", icon: BiLibrary },
-    { id: 3, name: "Settings", link: "/", icon: IoSettingsOutline },
   ];
 
   const toggleDropdown = () => setOpen(prev => !prev);

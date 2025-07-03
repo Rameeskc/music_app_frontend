@@ -7,7 +7,7 @@ const Chips = () => {
   ];
 
   return (
-    <div className="flex gap-2 px-6 pt-4 flex-wrap">
+    <div className="flex gap-2 px-6 pt-4 mb-3 flex-wrap">
       {categories.map((category, index) => (
         <p
           key={index}
