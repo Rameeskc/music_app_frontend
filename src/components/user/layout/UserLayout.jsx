@@ -12,7 +12,7 @@ const UserLayout = () => {
       </div>
       <div className="flex flex-col grow overflow-hidden">
         <NavBar />
-        <div className="grow overflow-auto">
+        <div className="grow overflow-auto pb-24 lg:pb-0"> 
           <Outlet />
         </div>
         <BottomBar />

@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 @import "tailwindcss";
 
+
 @theme {
     --font-Pacifico:'Pacifico', 'cursive'
   }
 
   body, #root {
-    @apply bg-[rgb(18,18,18)] min-h-screen;
+    @apply bg-[url('/public/3.jpg')] min-h-screen bg-cover;
     margin: 0;
   }
   @keyframes scrollText {
