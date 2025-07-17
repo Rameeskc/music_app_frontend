@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import ColorThief from 'colorthief';
 
-const SongCard = ({ image, name, artist, alpha = 0.50 }) => {
+const SongCard = ({ image, name, artist, alpha = 1 }) => {
   const imgRef = useRef(null);
   const textRef = useRef(null);
   const [bgColor, setBgColor] = useState('rgba(0, 0, 0, 0.05)');

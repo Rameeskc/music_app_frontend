@@ -17,7 +17,7 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className="hidden lg:flex flex-col h-screen w-64 bg-[rgb(40,40,40)] backdrop-blur-md shadow-lg m-4 rounded-2xl">
+    <div className="hidden lg:flex flex-col h-screen w-64 backdrop-blur-md shadow-lg m-4 rounded-2xl">
       <div className="flex items-center justify-center h-16 mt-4 p-4">
         <FaHeadphones className="text-[rgb(1,238,254)] text-3xl" />
         <p className="font-Pacifico ml-3 text-2xl text-slate-200 select-none">MoonBeats</p>

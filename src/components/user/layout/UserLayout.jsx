@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom';
 import NavBar from '../NavBar';
 import BottomBar from '../BottomBar';
 import Sidebar from '../Sidebar';
+import MusicPlayer from '../MusicPlayer';
 
 const UserLayout = () => {
   return (
@@ -12,9 +13,10 @@ const UserLayout = () => {
       </div>
       <div className="flex flex-col grow overflow-hidden">
         <NavBar />
-        <div className="grow overflow-auto pb-24 lg:pb-0"> 
+        <div className="grow overflow-auto pb-52 lg:pb-0"> 
           <Outlet />
         </div>
+        <MusicPlayer/>
         <BottomBar />
       </div>
     </div>

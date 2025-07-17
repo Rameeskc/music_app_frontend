@@ -26,7 +26,7 @@ const NavBar = () => {
   return (
     <div
       ref={navbarRef}
-      className="relative my-3 z-50 h-16 flex items-center justify-between lg:justify-end bg-transparent px-6 shadow-lg backdrop-blur-md"
+      className="relative my-3 z-50 h-16 flex items-center justify-between lg:justify-end px-6 "
     >
       <div className="flex items-center">
         <FaHeadphones className="text-[rgb(1,238,254)] text-2xl lg:hidden" />
