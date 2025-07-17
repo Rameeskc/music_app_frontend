@@ -7,7 +7,7 @@
   }
 
   body, #root {
-    @apply bg-[url('/public/4.jpg')] min-h-screen bg-cover;
+    @apply bg-[url('/4.jpg')] min-h-screen bg-cover bg-center bg-no-repeat;
     margin: 0;
   }
   @keyframes scrollText {
